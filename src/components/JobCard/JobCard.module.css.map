@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "JobCard.module.scss"
+    ],
+    "names": [],
+    "file": "JobCard.module.css"
+}

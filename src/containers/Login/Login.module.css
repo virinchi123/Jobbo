@@ -1,0 +1,146 @@
+.container {
+  padding: 0%;
+  display: -ms-grid;
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+      grid-template-areas: "leftbox rightbox";
+  -ms-grid-columns: 65% 35%;
+      grid-template-columns: 65% 35%;
+  font-family: "Roboto", sans-serif;
+  /*.button{
+        width:20em;
+        height:2em;
+        background-color: color(green);
+        padding:0.2em;
+        box-sizing: border-box;
+        border: none;
+        border-radius: 1em;
+    }*/
+}
+
+.container .line {
+  width: 4em;
+  min-height: 0.3em;
+}
+
+.container .leftBox {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: leftbox;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  padding: 5%;
+}
+
+.container .leftBox .heading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .leftBox .form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.container .leftBox .icon {
+  border: 1px #ececec solid;
+  border-radius: 50%;
+  width: 3em;
+  height: 3em;
+  padding: 0.7em;
+  position: relative;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.container .leftBox p {
+  color: #999999;
+}
+
+.container .leftBox h1 {
+  color: #0dca78;
+}
+
+.container .leftBox .line {
+  background-color: #0dca78;
+}
+
+.container .rightBox {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: rightbox;
+  background-image: url("../../assets/login-page.png");
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  /*button{
+            background-color: rgba(0,0,0,0);
+            border: 2px solid white;
+            padding: 2em;
+            text-align: center;
+            vertical-align: middle;
+            box-sizing: border-box;
+        }*/
+}
+
+.container .rightBox h1 {
+  color: white;
+}
+
+.container .rightBox p {
+  color: white;
+}
+
+.container .rightBox .line {
+  background-color: white;
+}
+
+.container .rightBox .rightBoxItem {
+  padding: 0.2em;
+}
+/*# sourceMappingURL=Login.module.css.map */

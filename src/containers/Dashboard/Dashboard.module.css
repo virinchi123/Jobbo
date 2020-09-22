@@ -1,0 +1,14 @@
+.container {
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "sidebar workspace";
+  -ms-grid-columns: "5% 95%";
+      grid-template-columns: "5% 95%";
+}
+
+.sidebar {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: sidebar;
+}
+/*# sourceMappingURL=Dashboard.module.css.map */

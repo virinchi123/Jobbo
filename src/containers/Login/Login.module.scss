@@ -1,0 +1,120 @@
+$colors:(
+    green:#0dca78,
+    black:#202020,
+    gray: #999999,
+    lightGray:#ececec,
+    topGreen:#0dca9b,
+    bottomGreen:#0dca78
+);
+
+@function color($color){
+    @return map-get($map: $colors, $key:$color );
+}
+
+$Roboto:'Roboto', sans-serif;
+
+.container{
+    padding: 0%;
+    display: grid;
+    width:100vw;
+    height: 100vh;
+    box-sizing: border-box;
+    grid-template-areas: "leftbox rightbox";
+    grid-template-columns: 65% 35%;
+    font-family: $Roboto;
+
+    .line{
+        width: 4em;
+        min-height: 0.3em;
+    }
+
+    /*.button{
+        width:20em;
+        height:2em;
+        background-color: color(green);
+        padding:0.2em;
+        box-sizing: border-box;
+        border: none;
+        border-radius: 1em;
+    }*/
+
+    .leftBox{
+        grid-area: leftbox;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        padding: 5%;
+
+        .heading{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .icon{
+            border: 1px color(lightGray) solid;
+            border-radius: 50%;
+            width: 3em;
+            height: 3em;
+            padding: 0.7em;
+            position: relative;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        p{
+        color: color(gray);
+    }
+
+        h1{
+            color: color(green);
+        }
+
+        .line{
+            background-color: color(green);
+        }
+    }
+
+    .rightBox{
+        grid-area: rightbox;
+        background-image: url('../../assets/login-page.png');
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+
+        h1{
+            color: white;
+        }
+
+        p{
+            color: white;
+        }
+
+        .line{
+            background-color: white;
+        }
+
+        /*button{
+            background-color: rgba(0,0,0,0);
+            border: 2px solid white;
+            padding: 2em;
+            text-align: center;
+            vertical-align: middle;
+            box-sizing: border-box;
+        }*/
+
+        .rightBoxItem{
+            padding:0.2em;
+        }
+    }
+}
