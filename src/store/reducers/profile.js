@@ -2,16 +2,58 @@ import * as actionTypes from '../actions/actionTypes';
 import _ from 'lodash';
 
 const initialState = {
-    name:'',
-    email:'',
-    phone:'',
-    city:'',
-    education:[],
-    jobs:[],
-    internships:[],
-    projects:[],
-    skills:[],
-    links:[]
+    name:'Virinchi Rao',
+    email:'raovirinchi123@gmail.com',
+    phone:'8886086464',
+    city:'Hyderabad',
+    education:[{
+        type:'secondary',
+        institute:'Vagdevi Vilas School',
+        board:'CBSE',
+        end:2015,
+        percentage:96
+    },
+    {
+        type: 'senior secondary',
+        institute:'Narayana Junior College',
+        board: 'Telangana State Board',
+        end: 2017,
+        percentage: 93.4
+    },
+    {
+        type: 'undergrad',
+        institute:'Vellore Institute of Technology',
+        degree:'B.Tech, Computer Science and Engineering',
+        start:2017,
+        end: 2021,
+        percentage: 86.3
+    }
+],
+    jobs:[{
+        profile:'Rotational Developer',
+        organisation:'ION Group',
+        location:'Pune',
+        start:2021,
+        end: 2024,
+        description:'Work is of a rotational developer.'
+    }],
+    internships:[{
+        profile: 'Web Developer',
+        organisation: 'Origin Cloud',
+        location: 'Hyderabad',
+        start: 2021,
+        end: 2021,
+        description: 'Work is of a web developer.'
+    }],
+    projects:[{
+        title:'Braindle',
+        start:2021,
+        end:2021,
+        description:'Kindle for the Blind',
+        link:'https://www.github.com/virinchi123/Braindle'
+    }],
+    skills:['Java','Javascript','React','MongoDB','NodeJS','ExpressJS'],
+    links:['https://www.github.com/virinchi123']
 }
 
 const reducer = (state = initialState, action) => {

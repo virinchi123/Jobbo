@@ -33,3 +33,18 @@ export {
     addLink,
     removeLink
 } from './profile';
+
+export {
+    showEducationModal,
+    hideEducationModal,
+    showJobModal,
+    hideJobModal,
+    showInternshipModal,
+    hideInternshipModal,
+    showProjectModal ,
+    hideProjectModal,
+    showSkillModal,
+    hideSkillModal,
+    showLinkModal,
+    hideLinkModal,
+} from './resume'

@@ -8,13 +8,15 @@ import loginReducer from './store/reducers/login';
 import dashboardReducer from './store/reducers/dashboard';
 import jobsReducer from './store/reducers/search';
 import profileReducer from './store/reducers/profile';
+import resumeReducer from './store/reducers/resume';
 import * as serviceWorker from './serviceWorker';
 
 const rootReducer = combineReducers({
   login:loginReducer,
   dashboard:dashboardReducer,
   search:jobsReducer,
-  profile:profileReducer
+  profile:profileReducer,
+  resume:resumeReducer
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

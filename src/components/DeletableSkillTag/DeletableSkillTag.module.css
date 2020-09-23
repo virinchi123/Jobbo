@@ -3,7 +3,7 @@
   font-family: 'Roboto', sans-serif;
   color: #888888;
   border-radius: 1em;
-  padding: 1em;
+  padding: 0.5em;
   text-align: center;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -16,10 +16,11 @@
           align-items: center;
   margin-right: 1em;
   margin-bottom: 1em;
+  display: flex;
 }
 
 .container p {
   margin: 0;
   font-size: 0.8em;
 }
-/*# sourceMappingURL=SkillTag.module.css.map */
+/*# sourceMappingURL=DeletableSkillTag.module.css.map */

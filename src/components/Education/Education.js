@@ -1,4 +1,8 @@
 import React from 'react';
+import classes from './Education.module.css';
+import DeleteIcon from '@material-ui/icons/Delete';
+import Grid from '@material-ui/core/Grid';
+import IconButton from '@material-ui/core/IconButton';
 
 const Education = props =>{
     let level = null;
@@ -31,14 +35,14 @@ const Education = props =>{
     const institute = props.institute;
     let board = null;
     let start = null;
-    if(level.contains('Secondary')){
+    if(level.includes('Secondary')){
         board=props.board;
         start= props.start;
     }
     const end=props.end;
     const percentage = props.percentage;
     let degree = null;
-    if(!level.contains('Secondary')){
+    if(!level.includes('Secondary')){
         degree=props.degree;
     }
 
@@ -56,17 +60,29 @@ const Education = props =>{
         if(start){
             boardCode=(<p>{board}</p>)
         }
-    ;
+    
+    const deleteHandler = event=>{
+        props.delete(props.education)
+    }
 
     return(
-        <React.Fragment>
-            <p><b>{level}</b></p>
-            {degreeCode}
-            {institute}
-            {boardCode}
-            {durationCode}
-            {percentage}
-        </React.Fragment>
+        <Grid container>
+            <Grid item md={11}>
+                <div className={classes.container}>
+                    <p><b>{level}</b></p>
+                    {degreeCode}
+                    <p>{institute}</p>
+                    {boardCode}
+                    {durationCode}
+                    <p>{percentage}%</p>
+                </div>
+            </Grid>
+            <Grid item md={1}>
+                <IconButton onClick={deleteHandler}>
+                    <DeleteIcon/>
+                </IconButton>
+            </Grid>
+        </Grid>
     )
 
 }

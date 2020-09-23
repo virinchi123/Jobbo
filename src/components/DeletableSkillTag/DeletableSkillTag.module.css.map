@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,UAAU,CAAA;EACN,gBAAgB,EAAE,IAAI;EACtB,WAAW,EAAE,oBAAoB;EACjC,KAAK,EAAE,OAAO;EACd,aAAa,EAAE,GAAG;EAClB,OAAO,EAAC,KAAK;EACb,UAAU,EAAE,MAAM;EAClB,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,MAAM;EACvB,WAAW,EAAE,MAAM;EACnB,YAAY,EAAE,GAAG;EACjB,aAAa,EAAE,GAAG;EAClB,OAAO,EAAE,IAAI;CAMhB;;AAlBD,AAcI,UAdM,CAcN,CAAC,CAAA;EACG,MAAM,EAAE,CAAC;EACT,SAAS,EAAE,KAAK;CACnB",
+    "sources": [
+        "DeletableSkillTag.module.scss"
+    ],
+    "names": [],
+    "file": "DeletableSkillTag.module.css"
+}

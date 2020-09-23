@@ -25,3 +25,16 @@ export const addSkill = 'ADD_SKILL';
 export const removeSkill = 'REMOVE_SKILL';
 export const addLink = 'ADD_LINK';
 export const removeLink = 'REMOVE_LINK';
+
+export const showEducationModal='SHOW_EDUCATION_MODAL';
+export const hideEducationModal = 'HIDE_EDUCATION_MODAL';
+export const showJobModal = 'SHOW_JOB_MODAL';
+export const hideJobModal = 'HIDE_JOB_MODAL';
+export const showInternshipModal = 'SHOW_INTERNSHIP_MODAL';
+export const hideInternshipModal = 'HIDE_INTERNSHIP_MODAL';
+export const showProjectModal = 'SHOW_PROJECT_MODAL';
+export const hideProjectModal = 'HIDE_PROJECT_MODAL';
+export const showSkillModal = 'SHOW_SKILL_MODAL';
+export const hideSkillModal = 'HIDE_SKILL_MODAL';
+export const showLinkModal = 'SHOW_LINK_MODAL';
+export const hideLinkModal = 'HIDE_LINK_MODAL';
