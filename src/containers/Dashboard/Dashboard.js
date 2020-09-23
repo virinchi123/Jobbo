@@ -6,12 +6,13 @@ import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
-import Button from '@material-ui/core/Button';
 import ListItemText from '@material-ui/core/ListItemText';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import SearchResults from '../SearchResults/SearchResults';
+import Resume from '../Resume/Resume';
 
 const Dashboard = props=>{
 
@@ -61,11 +62,18 @@ const Dashboard = props=>{
 
     return(
         <div className={classes.container}>
-            <AppBar title='Jobbo'>
+            <AppBar title='Jobbo' style={{height: '60px'}}>
                 <Toolbar>
                     <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu" onClick = {props.openDrawer}>
                         <MenuIcon />
                     </IconButton>
+                
+                    <Divider orientation='vertical' style={{
+                        height: 28, 
+                        marginLeft: 4,
+                        backgroundColor:'#CCCCCC',
+                        boxSizing:'border-box'
+                    }} light variant='fullWidth'/>
                 </Toolbar>
             </AppBar>
             <Drawer variant='temporary' anchor='left' open={props.showDrawer} onClose={props.closeDrawer}>
@@ -74,7 +82,7 @@ const Dashboard = props=>{
             <div className={classes.sideDrawer}>
             </div>
             <div className={classes.workspace}>
-                
+                <Resume/>
             </div>
         </div>
     )

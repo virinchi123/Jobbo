@@ -13,3 +13,17 @@ export const removeJob = (job) => {
         payload: job
     }
 }
+
+export const expandJob = (job) => {
+    return {
+        type: actionTypes.expandJob,
+        payload: job
+    }
+}
+
+export const contractJob = (job) => {
+    return {
+        type: actionTypes.contractJob,
+        payload: job
+    }
+}

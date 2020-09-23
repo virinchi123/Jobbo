@@ -10,5 +10,26 @@ export {
 
 export {
     addJob,
-    removeJob
+    removeJob,
+    expandJob,
+    contractJob
 } from './search.js';
+
+export {
+    setName,
+    setProfileEmail,
+    setPhone,
+    setCity,
+    addEducation,
+    removeEducation,
+    addPrevJob,
+    removePrevJob,
+    addInternship,
+    removeInternship,
+    addProject,
+    removeProject,
+    addSkill,
+    removeSkill,
+    addLink,
+    removeLink
+} from './profile';

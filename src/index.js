@@ -6,11 +6,15 @@ import { createStore, compose, combineReducers } from 'redux';
 import {Provider} from 'react-redux';
 import loginReducer from './store/reducers/login';
 import dashboardReducer from './store/reducers/dashboard';
+import jobsReducer from './store/reducers/search';
+import profileReducer from './store/reducers/profile';
 import * as serviceWorker from './serviceWorker';
 
 const rootReducer = combineReducers({
   login:loginReducer,
-  dashboard:dashboardReducer
+  dashboard:dashboardReducer,
+  search:jobsReducer,
+  profile:profileReducer
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
