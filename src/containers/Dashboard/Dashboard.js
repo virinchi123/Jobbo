@@ -13,9 +13,10 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchResults from '../SearchResults/SearchResults';
 import Resume from '../Resume/Resume';
+import {Route,Switch,NavLink} from 'react-router-dom';
 
 const Dashboard = props=>{
-
+    console.log(props)
     const toggleDrawer = (anchor, open) => (event) => {
         if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
             return;
@@ -29,6 +30,19 @@ const Dashboard = props=>{
         }
     };
 
+    const dashboardSender = event =>{
+        props.history.push('/dashboard')
+    }
+
+    const profileSender = event =>{
+        console.log('here')
+        props.history.push('/profile')
+    }
+
+    const jobSender = event=>{
+        props.history.push('/jobs')
+    }
+
 
     const list = (
         <List>
@@ -36,18 +50,15 @@ const Dashboard = props=>{
                 <ListItemText inset primary='Close' style={{fontWeight:'bolder'}} />
             </ListItem>
             <Divider/>
-            <ListItem button>
-                <ListItemText inset primary='Dashboard' />
+            <ListItem button onClick={dashboardSender}>
+                <ListItemText inset primary='Dashboard'/>
             </ListItem>
-            <ListItem button>
-                <ListItemText inset primary='Search Jobs' />
-            </ListItem>
-            <ListItem button>
-                <ListItemText inset primary='My Applications' />
+            <ListItem button onClick={jobSender}>
+                <ListItemText inset primary='Search Jobs'/>
             </ListItem>
             <Divider/>
-            <ListItem button>
-                <ListItemText inset primary='Profile' />
+            <ListItem button onClick={profileSender}>
+                <ListItemText inset primary='Profile'/>
             </ListItem>
             <ListItem button>
                 <ListItemText inset primary='Sign Out' />
@@ -82,7 +93,10 @@ const Dashboard = props=>{
             <div className={classes.sideDrawer}>
             </div>
             <div className={classes.workspace}>
-                <Resume/>
+                <Switch>
+                    <Route path='/profile' exact component={Resume}/>
+                    <Route path='/jobs' exact component={SearchResults}/>
+                </Switch>
             </div>
         </div>
     )

@@ -11,6 +11,7 @@ import profileReducer from './store/reducers/profile';
 import resumeReducer from './store/reducers/resume';
 import modalReducer from './store/reducers/modal'
 import * as serviceWorker from './serviceWorker';
+import {BrowserRouter} from 'react-router-dom';
 
 const rootReducer = combineReducers({
   login:loginReducer,
@@ -27,9 +28,11 @@ const store = createStore(rootReducer, composeEnhancers());
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <App />
-    </Provider>
+    <BrowserRouter>
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );

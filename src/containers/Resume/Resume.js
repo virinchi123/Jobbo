@@ -13,7 +13,6 @@ import SkillTag from '../../components/DeletableSkillTag/DeletableSkillTag';
 import IconButton from '@material-ui/core/IconButton';
 import AddIcon from '@material-ui/icons/Add';
 import Modal from '@material-ui/core/Modal';
-import Box from '@material-ui/core/Box';
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from "@material-ui/core/styles";
 import Select from '@material-ui/core/Select';
