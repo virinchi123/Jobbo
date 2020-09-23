@@ -48,3 +48,26 @@ export {
     showLinkModal,
     hideLinkModal,
 } from './resume'
+
+export{
+    setEdInstitution,
+    setEdStart,
+    setEdEnd,
+    setEdLevel,
+    setEdDegree,
+    setEdBoard,
+    setEdPercentage,
+    setProProfile,
+    setProOrganisation,
+    setProStart ,
+    setProEnd,
+    setProDescription,
+    setProLocation,
+    setJTitle,
+    setJStart,
+    setJEnd,
+    setJDescription,
+    setJLink,
+    setSkill,
+    setLink     
+} from './modal.js'

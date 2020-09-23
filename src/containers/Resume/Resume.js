@@ -113,7 +113,7 @@ const Resume = props =>{
             return (
                 <Internship
                     profile={el.profile}
-                    organisation={el.organization}
+                    organisation={el.organisation}
                     location={el.location}
                     start={el.start}
                     end={el.end}
@@ -153,6 +153,197 @@ const Resume = props =>{
         )
     }
 
+    const institutionHandler = event=>{
+        props.setEdInstitution(event.target.value);
+    }
+
+    const edStartHandler = event => {
+        props.setEdStart(event.target.value);
+    }
+
+    const edEndHandler = event => {
+        props.setEdEnd(event.target.value);
+    }
+
+    const edLevelHandler = event => {
+        props.setEdLevel(event.target.value);
+    }
+
+    const edDegreeHandler = event => {
+        props.setEdDegree(event.target.value);
+    }
+
+    const edBoardHandler = event => {
+        props.setEdBoard(event.target.value);
+    }
+
+    const edPercentageHandler = event => {
+        props.setEdPercentage(event.target.value);
+    }
+
+    const proProfileHandler = event => {
+        props.setProProfile(event.target.value);
+    }
+
+    const proOrganisationHandler = event => {
+        props.setProOrganisation(event.target.value);
+    }
+
+    const proLocationHandler = event => {
+        props.setProLocation(event.target.value);
+    }
+
+    const proStartHandler = event => {
+        props.setProStart(event.target.value);
+    }
+
+    const proEndHandler = event => {
+        props.setProEnd(event.target.value);
+    }
+
+    const proDescriptionHandler = event => {
+        props.setProDescription(event.target.value);
+    }
+
+    const JTitleHandler = event => {
+        props.setJTitle(event.target.value);
+    }
+
+    const JStartHandler = event => {
+        props.setJStart(event.target.value);
+    }
+
+    const JEndHandler = event => {
+        props.setJEnd(event.target.value);
+    }
+
+    const JDescriptionHandler = event => {
+        props.setJDescription(event.target.value);
+    }
+
+    const JLinkHandler = event => {
+        props.setJLink(event.target.value);
+    }
+
+    const SkillHandler = event => {
+        props.setSkill(event.target.value);
+    }
+
+    const LinkHandler = event => {
+        props.setLink(event.target.value);
+    }
+
+    const edSubmitHandler = event =>{
+        let education=null;
+        if(props.tempLevel.includes('secondary')){
+            education={
+                institute:props.tempInstitution,
+                start:props.tempStart,
+                end:props.tempEnd,
+                type:props.tempLevel,
+                board:props.tempBoard,
+                percentage:props.tempPercentage
+            }
+        }
+        else{
+            education = {
+                institute: props.tempInstitution,
+                end: props.tempEnd,
+                type: props.tempLevel,
+                degree: props.tempDegree,
+                percentage: props.tempPercentage
+            }
+        }
+
+        console.log(education)
+
+        props.addEducation(education);
+        props.setEdStart('');
+        props.setEdEnd('');
+        props.setEdInstitution('');
+        props.setEdLevel('');
+        props.setEdDegree('');
+        props.setEdPercentage('');
+        props.setEdBoard('');
+        props.hideEducationModal();
+    }
+
+    const jobSubmitHandler = event=>{
+        let job = null;
+        job={
+            profile:props.tempProfile,
+            organisation:props.tempOrganisation,
+            location:props.tempLocation,
+            start:props.tempStart,
+            end:props.tempEnd,
+            description:props.tempDescription
+        }
+
+        props.addJob(job);
+        props.setProProfile('')
+        props.setProOrganisation('')
+        props.setProLocation('')
+        props.setProStart('')
+        props.setProEnd('')
+        props.setProDescription('')
+        props.hideJobModal();
+    }
+
+    const internshipSubmitHandler = event => {
+        let job = null;
+        job = {
+            profile: props.tempProfile,
+            organisation: props.tempOrganisation,
+            location: props.tempLocation,
+            start: props.tempStart,
+            end: props.tempEnd,
+            description: props.tempDescription
+        }
+
+        props.addInternship(job);
+        props.setProProfile('')
+        props.setProOrganisation('')
+        props.setProLocation('')
+        props.setProStart('')
+        props.setProEnd('')
+        props.setProDescription('')
+        props.hideInternshipModal();
+    }
+
+    const projectSubmitHandler=event=>{
+        let project = {
+            title:props.tempTitle,
+            start:props.tempStart,
+            end:props.tempEnd,
+            description:props.tempDescription,
+            link:props.tempLink
+        }
+
+        props.addProject(project);
+        props.setJTitle('');
+        props.setJStart('')
+        props.setJEnd('');
+        props.setJDescription('');
+        props.setJLink('');
+        props.hideProjectModal();
+    }
+
+    const skillSubmitHandler=event=>{
+        let skill=props.tempSkill;
+
+        props.addSkill(skill);
+        props.setSkill('');
+        props.hideSkillModal();
+    }
+
+    const linkSubmitHandler=event=>{
+        let link=props.tempLink;
+
+        props.addLink(link);
+        props.setLink('');
+        props.hideLinkModal();
+    }
+
     return(
     <Container maxWidth='md'>
         <Modal open={props.EducationModal} onClose={props.hideEducationModal} style={{width:'60vw'}}>
@@ -162,13 +353,13 @@ const Resume = props =>{
                     <div>
                         <Grid container>
                             <Grid item md={12} style={{marginBottom:'1em'}}>
-                                <TextField label='College' variant='outlined' />
+                                <TextField label='College' variant='outlined' onChange={institutionHandler}/>
                             </Grid>
                             <Grid item md={12} style={{ marginBottom: '1em' }}>
-                                <TextField label='Start Year' variant='outlined' />
+                                <TextField label='Start Year' variant='outlined' onChange={edStartHandler}/>
                             </Grid>
                             <Grid item md={12} style={{ marginBottom: '1em' }}>
-                                <TextField label='End Year' variant='outlined' />
+                                    <TextField label='End Year' variant='outlined' onChange={edEndHandler}/>
                             </Grid>
                             <Grid item md={12} style={{ marginBottom: '1em' }}>
                                 <InputLabel id="demo-simple-select-label">Level</InputLabel>
@@ -176,6 +367,7 @@ const Resume = props =>{
                                     labelId="demo-simple-select-label"
                                     id="demo-simple-select"
                                     style={{minWidth:'12em'}}
+                                    onChange={edLevelHandler}
                                 >
                                     <MenuItem value={'secondary'}>Secondary(X)</MenuItem>
                                     <MenuItem value={'senior secondary'}>Senior Secondary(XII)</MenuItem>
@@ -187,16 +379,16 @@ const Resume = props =>{
                                 </Select>
                             </Grid>
                             <Grid item md={12} style={{ marginBottom: '1em' }}>
-                                <TextField label='Degree' variant='outlined' />
+                                    <TextField label='Degree' variant='outlined' onChange={edDegreeHandler}/>
                             </Grid>
                             <Grid item md={12} style={{ marginBottom: '1em' }}>
-                                <TextField label='Board' variant='outlined' />
+                                    <TextField label='Board' variant='outlined' onChange={edBoardHandler}/>
                             </Grid>
                             <Grid item md={12} style={{ marginBottom: '1em' }}>
-                                <TextField label='Percentage' variant='outlined' />
+                                    <TextField label='Percentage' variant='outlined' onChange={edPercentageHandler}/>
                             </Grid>
                             <Grid item md={12} style={{ marginBottom: '1em' }}>
-                                <Button color='primary' variant='contained'>Add</Button>
+                                <Button color='primary' variant='contained' onClick={edSubmitHandler}>Add</Button>
                             </Grid>
                         </Grid>
                     </div>
@@ -211,25 +403,25 @@ const Resume = props =>{
                         <div>
                             <Grid container>
                                 <Grid item md={12} style={{ marginBottom: '1em' }}>
-                                    <TextField label='Profile' fullWidth variant='outlined' />
+                                    <TextField label='Profile' fullWidth variant='outlined' onChange={proProfileHandler}/>
                                 </Grid>
                                 <Grid item md={12} style={{ marginBottom: '1em' }}>
-                                    <TextField label='Organisation' fullWidth variant='outlined' />
+                                    <TextField label='Organisation' fullWidth variant='outlined' onChange={proOrganisationHandler}/>
                                 </Grid>
                                 <Grid item md={12} style={{ marginBottom: '1em' }}>
-                                    <TextField label='Location' fullWidth variant='outlined' />
+                                    <TextField label='Location' fullWidth variant='outlined' onChange={proLocationHandler}/>
                                 </Grid>
                                 <Grid item md={12} style={{ marginBottom: '1em' }}>
-                                    <TextField label='Start Year' variant='outlined' />
+                                    <TextField label='Start Year' variant='outlined' onChange={proStartHandler}/>
                                 </Grid>
                                 <Grid item md={12} style={{ marginBottom: '1em' }}>
-                                    <TextField label='End Year' variant='outlined' />
+                                    <TextField label='End Year' variant='outlined' onChange={proEndHandler}/>
                                 </Grid>
                                 <Grid item md={12} style={{ marginBottom: '1em' }}>
-                                    <TextField label='Description' multiline fullWidth variant='outlined' />
+                                    <TextField label='Description' multiline fullWidth variant='outlined' onChange={proDescriptionHandler}/>
                                 </Grid>
                                 <Grid item md={12} style={{ marginBottom: '1em' }}>
-                                    <Button color='primary' variant='contained'>Add</Button>
+                                    <Button color='primary' variant='contained' onClick={jobSubmitHandler}>Add</Button>
                                 </Grid>
                             </Grid>
                         </div>
@@ -244,25 +436,25 @@ const Resume = props =>{
                         <div>
                             <Grid container>
                                 <Grid item md={12} style={{ marginBottom: '1em' }}>
-                                    <TextField label='Profile' fullWidth variant='outlined' />
+                                    <TextField label='Profile' fullWidth variant='outlined' onChange={proProfileHandler} />
                                 </Grid>
                                 <Grid item md={12} style={{ marginBottom: '1em' }}>
-                                    <TextField label='Organisation' fullWidth variant='outlined' />
+                                    <TextField label='Organisation' fullWidth variant='outlined' onChange={proOrganisationHandler} />
                                 </Grid>
                                 <Grid item md={12} style={{ marginBottom: '1em' }}>
-                                    <TextField label='Location' fullWidth variant='outlined' />
+                                    <TextField label='Location' fullWidth variant='outlined' onChange={proLocationHandler} />
                                 </Grid>
                                 <Grid item md={12} style={{ marginBottom: '1em' }}>
-                                    <TextField label='Start Year' variant='outlined' />
+                                    <TextField label='Start Year' variant='outlined' onChange={proStartHandler} />
                                 </Grid>
                                 <Grid item md={12} style={{ marginBottom: '1em' }}>
-                                    <TextField label='End Year' variant='outlined' />
+                                    <TextField label='End Year' variant='outlined' onChange={proEndHandler} />
                                 </Grid>
                                 <Grid item md={12} style={{ marginBottom: '1em' }}>
-                                    <TextField label='Description' multiline fullWidth variant='outlined' />
+                                    <TextField label='Description' multiline fullWidth variant='outlined' onChange={proDescriptionHandler} />
                                 </Grid>
                                 <Grid item md={12} style={{ marginBottom: '1em' }}>
-                                    <Button color='primary' variant='contained'>Add</Button>
+                                    <Button color='primary' variant='contained' onClick={internshipSubmitHandler}>Add</Button>
                                 </Grid>
                             </Grid>
                         </div>
@@ -276,22 +468,22 @@ const Resume = props =>{
                         <div>
                             <Grid container>
                                 <Grid item md={12} style={{ marginBottom: '1em' }}>
-                                    <TextField label='Title' fullWidth variant='outlined' />
+                                    <TextField label='Title' fullWidth variant='outlined' onChange={JTitleHandler}/>
                                 </Grid>
                                 <Grid item md={12} style={{ marginBottom: '1em' }}>
-                                    <TextField label='Start Year' variant='outlined' />
+                                    <TextField label='Start Year' variant='outlined' onChange={JStartHandler}/>
                                 </Grid>
                                 <Grid item md={12} style={{ marginBottom: '1em' }}>
-                                    <TextField label='End Year' variant='outlined' />
+                                    <TextField label='End Year' variant='outlined' onChange={JEndHandler}/>
                                 </Grid>
                                 <Grid item md={12} style={{ marginBottom: '1em' }}>
-                                    <TextField label='Description' multiline fullWidth variant='outlined' />
+                                    <TextField label='Description' multiline fullWidth variant='outlined' onChange={JDescriptionHandler}/>
                                 </Grid>
                                 <Grid item md={12} style={{ marginBottom: '1em' }}>
-                                    <TextField label='Link' fullWidth variant='outlined' />
+                                    <TextField label='Link' fullWidth variant='outlined' onChange={JLinkHandler}/>
                                 </Grid>
                                 <Grid item md={12} style={{ marginBottom: '1em' }}>
-                                    <Button color='primary' variant='contained'>Add</Button>
+                                    <Button color='primary' variant='contained' onClick={projectSubmitHandler}>Add</Button>
                                 </Grid>
                             </Grid>
                         </div>
@@ -305,10 +497,10 @@ const Resume = props =>{
                         <div>
                             <Grid container>
                                 <Grid item md={12} style={{ marginBottom: '1em' }}>
-                                    <TextField label='Skill' fullWidth variant='outlined' />
+                                    <TextField label='Skill' fullWidth variant='outlined' onChange={SkillHandler}/>
                                 </Grid>
                                 <Grid item md={12} style={{ marginBottom: '1em' }}>
-                                    <Button color='primary' variant='contained'>Add</Button>
+                                    <Button color='primary' variant='contained' onClick={skillSubmitHandler}>Add</Button>
                                 </Grid>
                             </Grid>
                         </div>
@@ -322,10 +514,10 @@ const Resume = props =>{
                         <div>
                             <Grid container>
                                 <Grid item md={12} style={{ marginBottom: '1em' }}>
-                                    <TextField label='Link' fullWidth variant='outlined' />
+                                    <TextField label='Link' fullWidth variant='outlined' onChange={LinkHandler}/>
                                 </Grid>
                                 <Grid item md={12} style={{ marginBottom: '1em' }}>
-                                    <Button color='primary' variant='contained'>Add</Button>
+                                    <Button color='primary' variant='contained' onClick={linkSubmitHandler}>Add</Button>
                                 </Grid>
                             </Grid>
                         </div>
@@ -436,7 +628,22 @@ const mapStateToProps = state =>{
         InternshipModal: state.resume.showInternshipModal,
         ProjectModal: state.resume.showProjectModal,
         SkillModal: state.resume.showSkillModal,
-        LinkModal: state.resume.showLinkModal
+        LinkModal: state.resume.showLinkModal,
+        tempInstitution: state.modals.institution,
+        tempStart:state.modals.start,
+        tempEnd:state.modals.end,
+        tempLocation:state.modals.location,
+        tempLevel:state.modals.level,
+        tempDegree:state.modals.degree,
+        tempBoard: state.modals.board,
+        tempPercentage:state.modals.percentage,
+        tempProfile:state.modals.profile,
+        tempOrganisation:state.modals.organisation,
+        tempDescription:state.modals.description,
+        tempTitle:state.modals.title,
+        tempSkill:state.modals.skill,
+        tempLink:state.modals.link
+
     }
 }
 
@@ -470,6 +677,26 @@ const mapDispatchToProps = dispatch =>{
         hideSkillModal: () => dispatch(ResumeActions.hideSkillModal()),
         showLinkModal: () => dispatch(ResumeActions.showLinkModal()),
         hideLinkModal: () => dispatch(ResumeActions.hideLinkModal()),
+        setEdInstitution: (name) => dispatch(ResumeActions.setEdInstitution(name)),
+        setEdStart: (name) => dispatch(ResumeActions.setEdStart(name)),
+        setEdEnd: (name) => dispatch(ResumeActions.setEdEnd(name)),
+        setEdLevel: (name) => dispatch(ResumeActions.setEdLevel(name)),
+        setEdDegree: (name) => dispatch(ResumeActions.setEdDegree(name)),
+        setEdBoard: (name) => dispatch(ResumeActions.setEdBoard(name)),
+        setEdPercentage: (name) => dispatch(ResumeActions.setEdPercentage(name)),
+        setProProfile: (name) => dispatch(ResumeActions.setProProfile(name)),
+        setProOrganisation: (name) => dispatch(ResumeActions.setProOrganisation(name)),
+        setProLocation: (name) => dispatch(ResumeActions.setProLocation(name)),
+        setProStart: (name) => dispatch(ResumeActions.setProStart(name)),
+        setProEnd: (name) => dispatch(ResumeActions.setProEnd(name)),
+        setProDescription: (name) => dispatch(ResumeActions.setProDescription(name)),
+        setJTitle: (name) => dispatch(ResumeActions.setJTitle(name)),
+        setJStart: (name) => dispatch(ResumeActions.setJStart(name)),
+        setJEnd: (name) => dispatch(ResumeActions.setJEnd(name)),
+        setJDescription: (name) => dispatch(ResumeActions.setJDescription(name)),
+        setJLink: (name) => dispatch(ResumeActions.setJLink(name)),
+        setSkill: (name) => dispatch(ResumeActions.setSkill(name)),
+        setLink: (name) => dispatch(ResumeActions.setLink(name))
     }
 }
 

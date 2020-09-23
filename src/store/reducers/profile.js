@@ -80,6 +80,7 @@ const reducer = (state = initialState, action) => {
                 city: action.payload
             }
         case actionTypes.addEducation:
+            console.log(action.payload)
             return {
                 ...state,
                 education:[...state.education,action.payload]
@@ -95,7 +96,7 @@ const reducer = (state = initialState, action) => {
         case actionTypes.addPrevJob:
             return {
                 ...state,
-                jobs:[state.jobs,action.payload]
+                jobs:[...state.jobs,action.payload]
             }
         case actionTypes.removePrevJob:
             let newJobs = [...state.jobs]

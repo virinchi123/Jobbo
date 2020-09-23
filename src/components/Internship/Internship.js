@@ -6,7 +6,7 @@ import IconButton from '@material-ui/core/IconButton';
 
 const Internship = props => {
     const profile = props.profile;
-    const organisation = props.organization;
+    const organisation = props.organisation;
     const location = props.location;
     const start = props.start;
     const end = props.end;
